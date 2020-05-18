@@ -179,7 +179,7 @@ public class CustomerServiceImpl implements CustomerService {
         {
             throw new UpdateCustomerException("UCR-004","incorrect Old Password");
         }
-        if(!pat1.matcher(user.getPassword()).matches())
+        if(!pat1.matcher(newPassword).matches())
         {
             throw new UpdateCustomerException("UCR-001","Weak Password!");
         }

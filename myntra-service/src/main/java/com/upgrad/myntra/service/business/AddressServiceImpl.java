@@ -70,8 +70,8 @@ public class AddressServiceImpl implements AddressService{
 	@Override
 	public AddressEntity getAddressByUUID(String uuid,CustomerEntity customerEntity)  throws
 			AddressNotFoundException {
-		AddressEntity addressEntity=new AddressEntity();
-		if(addressEntity.getUuid().isEmpty())
+
+		if(uuid.isEmpty())
 		{
 			throw new AddressNotFoundException("ANF-005","Address field cannot be empty.");
 		}

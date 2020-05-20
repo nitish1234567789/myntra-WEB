@@ -97,7 +97,7 @@ public class CustomerController {
     }
 
     @CrossOrigin
-    @RequestMapping(method=RequestMethod.POST,path="/changepassword",consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(method=RequestMethod.PUT,path="/changepassword",consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<UpdatePasswordResponse> changepassword(@RequestHeader("authorization") final String acess, @RequestBody(required = false) final UpdatePasswordRequest  updatePasswordRequest) throws AuthorizationFailedException, UpdateCustomerException {
         String token= acess.split("Bearer")[1];
         CustomerEntity user= customerService.getCustomer(token);
